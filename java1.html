@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Java Project - Block & Key Game</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Justin S.</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><u>Java Project</u><br /></h1>
+									<h2>Block & Key<br />
+									2D-Platformer Game</h2>
+									<p>This project was a larger assignment involving project management where it was 
+										important to maintain proper documentation throughout the development of the program.
+										I'm pretty proud of what I've done anyway though as I coded the game in almost pure raw Java. 
+										I ended up using the Lightweight Java Game Library for rendering .png files to the screen, but 
+										all of the actual game logic uses just normal Java code with a tiny bit of multithreading.
+									</p>
+								</header>
+								<div class="image main"><img src="java/game/level1.PNG" alt="" /></div>
+								<p>Level 1 of the game. No pits or spikes and only two enemies to try an acclimate the player 
+									to the controls of the game in a non-punishing way.
+								</p>
+								<div class="image main"><img src="java/game/level2.PNG" alt="" /></div>
+								<p>Level 2 of the game. Introduces spikes that kill the player instantly on contact.</p>
+								<div class="image main"><img src="java/game/level3.PNG" alt="" /></div>
+								<p>Level 3 of the game. I attempt to more fully utilize the space for this level and 
+									encourage more precise jump inputs by the player to avoid taking damage.
+								</p>
+								<div class="image main"><img src="java/game/level4.PNG" alt="" /></div>
+								<p>Level 4 of the game. A more advanced version of level 2, with spikes but also several bat enemies 
+									and forcing the player to use either the improved jump height or speed from one of the two 
+									powerup items in order to reach the key. 
+								</p>
+								<div class="image main"><img src="java/game/level5.PNG" alt="" /></div>
+								<p>Level 5 of the game. A final gauntlet of precise jump challenges to get through to the end without dying. 
+									The game closes upon completion of this level.
+								</p>
+								<div class="image main"><img src="java/game/collision1.PNG" alt="" /></div>
+								<p>The first bit of multithreading I came up with for this project. The JumpLimiter Java class has two 
+									primary purposes. First, It uses java's TimerTask implementation to place a delay between toggling 
+									a boolean value to determine whether a "jump" input by the player actually causes the player to jump or 
+									not. This prevents the player from "flying" by jumping repeatedly. The second purpose is increasing the 
+									players height in small but rapid increments and checking with each iteration against a different boolean value 
+									to see if the player has collided with a block and breaking out of the jump loop if this value is true. This prevents 
+									the player from jumping through blocks. 
+								</p>
+								<div class="image main"><img src="java/game/collision2.PNG" alt="" /></div>
+								<p>My detectBlockCollision() method initializes a boolean value as false, then checks player positioning against an arraylist 
+									of all the block positions in the current level. If the player is within or against the bounds of any of the blocks the boolean 
+									is toggled to true and if the player is clipping into the block they are shifted to the left or right of the block depending on which 
+									side of the block they're closer to. Finally, after checking against every block in the list the boolean value is returned so it can 
+									be used for other game logic such as the previous JumpLimiter example.
+								</p>
+								<div class="image main"><img src="java/game/damage2.PNG" alt="" /></div>
+								<p>Here's a snippet of handling for damage collision with enemies. Enemy types are stored in an enumeration and since the spike 
+									obstacles are technically treated as an enemy this code differenciates between collision with a spike and collision with any other 
+									enemy. Spikes simply lower player health by 3 which is enough to instantly defeat the player and push them back to the start of the 
+									current level. For other enemies it lowers player health by 1 and instantiates InvulnTime and DamageFlicker objects to handle player 
+									invulnerability time between the player taking damage and the player sprite flickering in response to that damage respectively.
+								</p>
+								<div class="image main"><img src="java/game/damage3.PNG" alt="" /></div>
+								<p>Placeholder text.</p>
+								<div class="image main"><img src="java/game/damage4.PNG" alt="" /></div>
+								<p>Placeholder text.</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>69 Farrell Street, Unit 3<br />
+								Dartmouth, NS B3A 4B3<br />
+								Canada</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:9024418928">(902) 441-8928</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:sumralljustin89@gmail.com">sumralljustin89@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://twitter.com/JustinMSumrall" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/justin-sumrall-ba694219b/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/w0454368" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Justin Sumrall</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

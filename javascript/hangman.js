@@ -89,7 +89,7 @@ function fillWordArray() {
 
 function checkGuess() {
     var i;
-    let guess = document.getElementById("userGuess").value;
+    let guess = document.getElementById("userGuess").value.toUpperCase();
     let failCheck = 0;
     for (i = 0; i < 6; i++) {
         if (guess == wordArray[i]) {

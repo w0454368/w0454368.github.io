@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hangman</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="main.css" rel="stylesheet"/>
+    <script src="hangman.js" defer></script>
+
+</head>
+<header>
+    <img src="picture1.png" alt="Hangman" id="logoimg">
+
+</header>
+
+
+
+
+<div class="container4">
+
+    <div class="container3">
+        <canvas id="myCanvas" width="720" height="600" style="border:1px solid #000000;">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
+
+        <img id="part0" style="display: block; position: absolute; top: 10px; left: 10px;" src="gallows.png"/>
+        <img id="part1" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanHead.png"/>
+        <img id="part2" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanBody.png"/>
+        <img id="part3" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanLeg1.png"/>
+        <img id="part4" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanLeg2.png"/>
+        <img id="part5" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanArm1.png"/>
+        <img id="part6" style="display: none; position: absolute; top: 10px; left: 10px;" src="hangmanarm2.png"/>
+
+        <h1 style="position: absolute; top: 20px; left: 20px; display: block; float: left;" id="letter1">-</h1>
+        <h1 style="position: absolute; top: 20px; left: 50px; display: block; float: left;" id="letter2">-</h1>
+        <h1 style="position: absolute; top: 20px; left: 80px; display: block; float: left;" id="letter3">-</h1>
+        <h1 style="position: absolute; top: 20px; left: 110px; display: block; float: left;" id="letter4">-</h1>
+        <h1 style="position: absolute; top: 20px; left: 140px; display: block; float: left;" id="letter5">-</h1>
+        <h1 style="position: absolute; top: 20px; left: 170px; display: block; float: left;" id="letter6">-</h1>
+
+        <div class="container">
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="drop">
+        <button type="button" style="background-color: rgb(218,6,0); border-color: black; border-radius: 5px"
+                class="btn btn-primary" data-toggle="collapse" data-target="#demoHint">Hint Button
+        </button>
+        <div id="demoHint" style="width: 100%" class="collapse">
+        </div>
+    </div>
+
+    <div class="drop5">
+        <button type="button" style="background-color: rgb(218,6,0); border-color: black; border-radius: 5px"
+                class="btn btn-primary" data-toggle="collapse" data-target="#demo2">Cheat Button
+        </button>
+        <div id="demo2" style="width: 90%" class="collapse">
+
+        </div>
+    </div>
+    <div>
+        <div class="start">
+            <button style="background-color: rgb(218,6,0); border-color: black; border-radius: 5px;" class="btn-danger" onclick="resetGame(); guessRandom(); fillWordArray();">
+                Start
+            </button>
+        </div>
+        <br/>
+        <div class="guess">
+        <input id="userGuess">
+        <button class="btn-primary" style="background-color: rgb(218,6,0); border-color: black; border-radius: 5px;" class="btn-danger" onclick="checkGuess(); gameOver();">Guess</button>
+        </div>
+    </div>
+    </br>
+    <div>
+
+    </div>
+    <br/>
+    <div class="howTo" style="width: 300px; position: absolute; right: 800px; top: 350px">
+        <h1>How to Play</h1>
+
+        <p>Start the game by guessing a letter and typing it into the guess field. Guesses are not case-sensitive. In order to win the game,
+            the
+            player must guess the hidden word that is generated at the start of the game, with blanks being
+            provided
+            as characters to give the player the number of characters in the word. Each time the player guesses
+            a correct
+            letter, the blank space will be filled in by the corresponding letter. If the player guesses an
+            incorrect letter, "hangman" object gets added. Player loses the game if they get "hangman".</p>
+    </div>
+
+    <div class="row">
+        <div class="container text-center bg-danger text-light">
+            <h5 id="wrongGuesses"></h5>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
+
+
+

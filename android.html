@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Android Project - D&D Database App</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Justin S.</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1><u>Android Project</u><br /></h1>
+									<h2>D&D Character<br />
+									Database App</h2>
+									<p>For this project I was tasked with creating a simple android application that had an embedded
+										database file containing Dungeons & Dragons character data. (Character names, classes, races, and attribute points)
+										One fragment needed to contain a list populated by character names from the table, while a second fragment loads all
+										the data of a specific character once you click on that character. I also needed to then add code for a second version
+										of the app that adds a "last accessed" column which is updated and displayed live in the app.
+									</p>
+								</header>
+								<div class="image main"><img style="max-width: 50%; margin-left: auto; margin-right: auto;" src="android/app1.PNG" alt="" /></div>
+								<p>Here is the first fragment where you can see the list of character names from the database. Adding, deleting, or editing 
+									character records beyond adding the last accessed column was beyond the scope of this assignment.
+									So, the only option users have is to click on a name to display the rest of the data belonging to that character.
+								</p>
+								<div class="image main"><img style="max-width: 50%; margin-left: auto; margin-right: auto;" src="android/addDates5.PNG" alt="" /></div>
+								<p>This is the second fragment where the full data records of the character selected from the first fragment is displayed.
+									This image also shows the last accessed data from the second version of this application.
+								</p>
+								<div class="image main"><img style="max-width: 100%; margin-left: auto; margin-right: auto;" src="android/app2.PNG" alt="" /></div>
+								<p>On larger devices, like this emulated android tablet, both fragments are displayed at the same time. The list stays visible on the 
+									left portion of the screen while the large right portion displays the most recently selected character data and will update live 
+									as the user selects other characters to view.
+								</p>
+								<div class="image main"><img src="android/addDates3.PNG" alt="" /></div>
+								<p>For this assignment I needed the version that included the last accessed column to be able to take in the older version of the 
+									database file from the previous version of the assignment and update it to add the last 
+									accessed column if the provided table did not have one. In this code snippet I wrote a method hasDates() that returns a boolean 
+									value depending on if a last accessed column is found after querying the database. The return value can then be used to run the 
+									addDateCol() method that alters the table only if the column was missing.
+								</p>
+								<div class="image main"><img src="android/database2.PNG" alt="" /></div>
+								<p>With this screenshot you can see the structure and content of the database file when examined in DB Browser.</p>
+								<div class="image main"><img src="android/addDates4.PNG" alt="" /></div>
+								<p>And here you can see the updated database from the second version of the application where you can see how a default value is added 
+									for each record's last accessed column which is then updated with an actual time once it has been accessed in the actual application.
+								</p>
+								
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>69 Farrell Street, Unit 3<br />
+								Dartmouth, NS B3A 4B3<br />
+								Canada</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:9024418928">(902) 441-8928</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:sumralljustin89@gmail.com">sumralljustin89@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://twitter.com/JustinMSumrall" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/justin-sumrall-ba694219b/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/w0454368" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Justin Sumrall</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
