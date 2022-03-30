@@ -75,15 +75,23 @@
 								</p>
 								<div class="image main"><img src="java/game/damage2.PNG" alt="" /></div>
 								<p>Here's a snippet of handling for damage collision with enemies. Enemy types are stored in an enumeration and since the spike 
-									obstacles are technically treated as an enemy this code differenciates between collision with a spike and collision with any other 
+									obstacles are technically treated as an enemy this code differentiates between collision with a spike and collision with any other 
 									enemy. Spikes simply lower player health by 3 which is enough to instantly defeat the player and push them back to the start of the 
 									current level. For other enemies it lowers player health by 1 and instantiates InvulnTime and DamageFlicker objects to handle player 
 									invulnerability time between the player taking damage and the player sprite flickering in response to that damage respectively.
 								</p>
 								<div class="image main"><img src="java/game/damage3.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<p>Here you can see the simple logic involved with the invulnerability period between being able to take 
+									damage. Upon generation of an object of this class in response to taking damage, a boolean value for 
+									determining if the player should be able to take damage is checked and if true is toggled to false then a 
+									TimeTask starts to wait one second before toggling the flag back to true. 
+								</p>
 								<div class="image main"><img src="java/game/damage4.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<p>The DamageFlicker class works similarly to the previous InvulnTime class, but it uses a repeating scheduled task 
+									to rapidly toggle a boolean that alters the sprite for the player to create a flickering visual effect to indicate to 
+									the player that they have received damage. The final short sleep and boolean setting call is a failsafe to ensure that 
+									after the while loop ends the player's sprite is set back to the "not damaged" state.
+								</p>
 							</section>
 
 					</div>

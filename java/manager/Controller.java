@@ -29,6 +29,9 @@ public class Controller {
 
     private String fileNameToAdd;
 
+    // Absolute path string for project directory, change here as needed
+    private String filePath = "C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries";
+
     @FXML
     public TextArea welcomeText;
 
@@ -97,7 +100,7 @@ public class Controller {
 
     public void deleteFile() throws Exception {
         String fileName = fileList.getSelectionModel().getSelectedItem().toString();
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries"))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath))) {
             List<File> result = files.filter(Files::isRegularFile).map(x -> x.toFile()).collect(Collectors.toList());
 
             if (fileName != null) {
@@ -174,7 +177,7 @@ public class Controller {
         Stage stage = (Stage) fileField.getScene().getWindow();
         String targetPath = fileField.getText();
         String targetDir = categoryChoice.getSelectionModel().getSelectedItem().toString();
-        File dest = new File("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries\\"
+        File dest = new File(filePath + "\\"
                 + targetDir + "\\" + fileNameToAdd);
         File input = new File(targetPath);
         try {
@@ -201,10 +204,10 @@ public class Controller {
     public void moveEntry() {
         String fileName = fileList.getSelectionModel().getSelectedItem().toString();
         String targetDir = categoryChoice.getSelectionModel().getSelectedItem().toString();
-        File dest = new File("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries\\"
+        File dest = new File(filePath + "\\"
                 + targetDir + "\\" + fileName);
         String targetPath = null;
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries"))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath))) {
             List<File> result = files.filter(Files::isRegularFile).map(x -> x.toFile()).collect(Collectors.toList());
 
             if (fileName != null) {
@@ -231,7 +234,7 @@ public class Controller {
     }
 
     public void searchAll(ListView list) {
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries"))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath))) {
             List<String> result = files.filter(Files::isRegularFile)
                     .map(x -> x.getFileName().toString()).collect(Collectors.toList());
             java.util.Collections.sort(result);
@@ -257,7 +260,7 @@ public class Controller {
     public void searchCat(ListView list) {
         list.getItems().clear();
         String category = categoryChoice.getSelectionModel().getSelectedItem().toString();
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries\\" + category))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath + "\\" + category))) {
             List<String> result = files.filter(Files::isRegularFile)
                     .map(x -> x.getFileName().toString()).collect(Collectors.toList());
             java.util.Collections.sort(result);
@@ -277,7 +280,7 @@ public class Controller {
     public void searchName(ListView list) {
         list.getItems().clear();
         String fileName = listNameField.getText();
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries"))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath))) {
             List<File> result = files.filter(Files::isRegularFile).map(x -> x.toFile()).collect(Collectors.toList());
 
             if (fileName != null) {
@@ -298,7 +301,7 @@ public class Controller {
 
     public void viewEntry() {
         String fileName = fileList.getSelectionModel().getSelectedItem().toString();
-        try (Stream<Path> files = Files.walk(Paths.get("C:\\Git\\myRepos\\w0454368\\APPD1001\\Module_09\\src\\portEntries"))) {
+        try (Stream<Path> files = Files.walk(Paths.get(filePath))) {
             List<File> result = files.filter(Files::isRegularFile).map(x -> x.toFile()).collect(Collectors.toList());
 
             if (fileName != null) {
