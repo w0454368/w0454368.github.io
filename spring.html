@@ -28,29 +28,43 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1><u>Android Project</u><br /></h1>
-									<h2>D&D Character<br />
-									Database App</h2>
-									<p>Placeholder text</p>
+									<h1><u>Spring Data Project</u><br /></h1>
+									<h2>Postman API</h2>
+									<p>This project demonstrates using an API through Postman to interact with database records and 
+										perform basic CRUD operations on the record in that database. In this example application, the idea 
+										is that the user is interacting with a database of JSON-formatted records of students and can search by 
+										each student's ID number, courses they are enrolled in, or by the section number of their classes.
+									</p>
 								</header>
-								<div class="image main"><img src="android/accessCounter.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/accessCounter2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/adddates2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates3.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates4.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates5.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database1.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<div class="image main"><img src="spring/addStudent.PNG" alt="" /></div>
+								<p>By passing a JSON-formatted record in the request body of this HTTP POST request, a new student record is shown 
+									to be successfully added to the database of student records.
+								</p>
+								<div class="image main"><img src="spring/findAll.PNG" alt="" /></div>
+								<p>If a general GET request is made to the api without specifying id, course, or section data then all available 
+									student records are returned.
+								</p>
+								<div class="image main"><img src="spring/findByCourse.PNG" alt="" /></div>
+								<div class="image main"><img src="spring/findById.PNG" alt="" /></div>
+								<div class="image main"><img src="spring/findBySection.PNG" alt="" /></div>
+								<p>In these three screenshots you can see that if the GET request does specify an ID, course, or section 
+									number then only records with matching columns are returned.
+								</p>
+								<div class="image main"><img src="spring/updateStudent.PNG" alt="" /></div>
+								<p>Student records can also be updated, provided the user knows the student's ID number. By making a PUT request 
+									with the updated record data in the request body the api will search by ID to find the target record and then 
+									replace the old record data with the new data from the PUT request. This process requires the student's ID to ensure 
+									the correct record is replaced because it's the only search criteria in the api guaranteed to be unique and return only 
+									one record if it exists.
+								</p>
+								<div class="image main"><img src="spring/deleteStudent.PNG" alt="" /></div>
+								<div class="image main"><img src="spring/deleteAll.PNG" alt="" /></div>
+								<p>Just like the update method, records can be deleted from the database with a DELETE request made along with the student's 
+									ID number to ensure unique records are found to prevent accidentally deleting other records from the database. It's important 
+									to note that other ID numbers will not be shifted to fill the gap in ID numbers caused by deleting a record in order to 
+									preserve the integrity of the remaining ID numbers. If a DELETE request is made without a student ID parameter however, then 
+									all student records will be deleted instead, as shown in the second screenshot.
+								</p>
 							</section>
 
 					</div>

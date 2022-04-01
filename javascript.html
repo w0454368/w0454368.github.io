@@ -28,29 +28,39 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1><u>Android Project</u><br /></h1>
-									<h2>D&D Character<br />
-									Database App</h2>
-									<p>Placeholder text</p>
+									<h1><u>Javascript Project</u><br /></h1>
+									<h2>Hangman Browser Game</h2>
+									<p>This was a web development group project where I mainly handled creating game logic for the app to grab words and matching description 
+										strings from hardcoded arrays and then check if users could guess letters from those random words. On a correct guess the matching letters 
+										in the blank word at the top are filled in, and on an incorrect guess the letter guessed is added to an HTML element at the bottom and the 
+										hangman image is updated to show another part filled in. The game ends once either the hangman or the secret word are completely filled in, 
+										whichever comes first. The player can also click buttons to display a hint description of the word as a clue, or to cheat and display the 
+										whole word so they can just enter those letters and win quickly.
+									</p>
 								</header>
-								<div class="image main"><img src="android/accessCounter.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/accessCounter2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/adddates2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates3.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates4.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates5.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database1.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<div class="image main"><img src="javascript/gameStart.PNG" alt="" /></div>
+								<p>The app's main game screen, instructions on how to play are shown off to the side.</p>
+								<div class="image main"><img src="javascript/gameWin.PNG" alt="" /></div>
+								<p>Upon winning an alert window informs you of your victory.</p>
+								<div class="image main"><img src="javascript/gameLose.PNG" alt="" /></div>
+								<p>Or upon losing you get this alert instead letting you know you have lost.</p>
+								<div class="image main"><img src="javascript/hangGame1.PNG" alt="" /></div>
+								<p>Here is some of the core logic of starting a game, it sets all the part graphics to be invisible, sets all the letters of the hidden word to '-' 
+									characters to show that it is a six letter word, initializes all game variables, and then selects a random word from the arrays to be used for this 
+									round of the game. Since the arrays have words and matching description strings in the same order, matching values can be pulled here by using the random 
+									number generated to grab the value at that index from both arrays.
+								</p>
+								<div class="image main"><img src="javascript/checkGuess.PNG" alt="" /></div>
+								<p>In this function, the letter entered by the player is converted to upper case since all the hidden words are in all upper case and then compared against 
+									each of the letters of the hidden word. If there is a match then the gameWin condition is advanced for each match, if the guessed letter does not match 
+									a given letter of the hidden word a counter in incremented. If the counter reaches 6 that means none of the letters in the hidden word matched whatever the user 
+									guessed, so the hangman graphic is updated instead and the incorrect letter is added to the HTML element displaying all incorrectly guessed letters to remind the player 
+									of which letters they have already tried and the gameLose condition is advanced.
+								</p>
+								<div class="image main"><img src="javascript/wordPool.PNG" alt="" /></div>
+								<p>These are my hardcoded arrays of 100 six-letter words and matching brief, vague descriptions for the game to pull from to show 
+									that this data was hardcoded for this project.
+								</p>
 							</section>
 
 					</div>

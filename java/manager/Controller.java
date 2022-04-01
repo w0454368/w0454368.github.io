@@ -325,6 +325,7 @@ public class Controller {
 
     }
 
+    // Some default category options for the assignment this project was for.
     public void populateChoices(ChoiceBox choice) {
         choice.getItems().add("PROG1400");
         choice.getItems().add("NETW1700");

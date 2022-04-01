@@ -31,29 +31,38 @@
 									<h1><u>Java Project</u><br /></h1>
 									<h2>File Manager App</h2>
 									<p>For this project I had to plan out and code a simple file management 
-										application. This project had more to do with planning out a good and intuitive 
-										GUI flow throughout the different parts of the app, so my examples here are mostly
-										from that perspective.
+										application. Through use of the GUI, users can add files from elsewhere on their system 
+										into sub-directories within the project's working directory, open any files within these 
+										sub-directories, move files from one sub-directory to another, or delete files from these 
+										sub-directories.
 									</p>
 								</header>
-								<div class="image main"><img src="android/accessCounter.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/accessCounter2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/adddates2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates3.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates4.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates5.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database1.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<div class="image main"><img src="java/manager/portManStoryboard.png" alt="" /></div>
+								<p>This is the GUI storyboard for navigation throughout the various parts of the app, a user 
+									starts at a welcome screen with a text field explaining the purpose and usage of the application.
+									From there, users can select to "View Entries" where they will be given different options for how to 
+									search for whatever file they want to open and look at. If a desired file is found, it can be selected From
+									the ListView element and the large "View" button can be clicked to actually open the selected file(s).
+									If instead the "Manage Entries" button is clicked at the start, then the user can go through options for 
+									adding a file from somewhere else into one of the category sub-directories of this project so the file can show 
+									up and be opened from the previous search screens, the user can instead move an already added file from one category 
+									directory to another, or a file can be deleted to remove it from the app's searches. Deleting a file here actually deletes 
+									the real file, so multiple layers of confirmation are used to mitigate the chances of accidental deletion.
+									Finally, Exit Program can be selected at the start to simply close the program GUI.
+								</p>
+								<div class="image main"><img src="java/manager/search.PNG" alt="" /></div>
+								<p>Here is a brief snippet of how handled the searching by file name code. First, the code grabs the text from the GUI element 
+									that the user enters text from, then it walks through each of the files in all sub-directories and collects references to each file, 
+									after a null-check the file name entered by the user is compared with the file name of each file just collected, and if any files' names 
+									contain the string the user entered then they are added to the ListView GUI element to be displayed to the user.
+									If no such files are found then a string of "No results found." is added to the GUI instead to inform the user that their search yielded 
+									no results.
+								</p>
+								<div class="image main"><img src="java/manager/move.PNG" alt="" /></div>
+								<p>In this bit of code I show how I implemented file movement between application sub-directories. After the user selects a file to be moved and 
+									a target category for it to be moved to, then strings for those selections are pulled so the code can create objects to store the absolute path of 
+									the file's starting location and what the file's new location will be so that it can perform a move operation on the file.
+								</p>
 							</section>
 
 					</div>

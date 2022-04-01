@@ -28,29 +28,47 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<h1><u>Android Project</u><br /></h1>
-									<h2>D&D Character<br />
-									Database App</h2>
-									<p>Placeholder text</p>
+									<h1><u>Python Project</u><br /></h1>
+									<h2>Space Shooters Game</h2>
+									<p>This project is a very simple python game I built in my first semester. It's a top-down 
+										vertical shooting game where the user controls one ship at the bottom of the screen and must shoot 
+										at five enemy ships at the top of the screen. The player can take three hits from enemy bullets before they 
+										are destroyed. The game continues until the player or all five enemy ships are destroyed, whichever comes first, 
+										and a score is displayed based on how many enemy ships were destroyed.
+									</p>
 								</header>
-								<div class="image main"><img src="android/accessCounter.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/accessCounter2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/adddates2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates3.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates4.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/addDates5.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database1.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
-								<div class="image main"><img src="android/database2.PNG" alt="" /></div>
-								<p>Placeholder text.</p>
+								<div class="image main"><img src="python/snip1.PNG" alt="" /></div>
+								<p>This is the first screen the player sees upon starting the game, it gives the player control instructions 
+									on how to play and what their goal is. To ensure the game does not begin before player is ready, the game will 
+									remain on this screen until they press the Enter key.
+								</p>
+								<div class="image main"><img src="python/snip2.PNG" alt="" /></div>
+								<p>The main screen of the game, the player controls the blue ship and must attack the enemy red ships. To prevent 
+									visual confusion about which projectiles belong to which side, enemies will shoot yellow lasers while the player 
+									shoots white lasers.
+								</p>
+								<div class="image main"><img src="python/snip3.PNG" alt="" /></div>
+								<p>The final screen of the game, once either the player or all enemy ships are destroyed the game will move to 
+									this screen where the player's score is displayed. The player is awarded 500 points for each ship they destroy 
+									so this example shows when the player successfully destroys all five enemy ships. Similar to the first screen, the game 
+									will remain here until the player presses the Esc key to close the game so they have time to see their score.
+								</p>
+								<div class="image main"><img src="python/enemy.PNG" alt="" /></div>
+								<p>I used rapidly shifting random numbers to create this logic for having the enemy ships randomly move, occasionally not moving 
+									to give the player a better shot at them, and to sometimes toggle a boolean flag for them to fire lasers at the player. The numbers 
+									cycle very quickly, so even though the range for firing a laser seems small, it comes up a good, but not overwhelming, amount of times. </p>
+								<div class="image main"><img src="python/spaceshoot1.PNG" alt="" /></div>
+								<p>The bulk of the main loop logic, here the code manages collections containing the shots fired by enemies, shots 
+									fired by the player, and the enemy ships themselves. The code iterates through each of these collections and calls 
+									methods to handle each of their respective behaviours which constantly checking for game ending conditions to trigger 
+									falling out of this main loop and proceeding to the end screen of the game.
+								</p>
+								<div class="image main"><img src="python/bullet.PNG" alt="" /></div>
+								<p>For code simplicity, the same bullet class is used by both the player and the enemies with the difference in colour caused by 
+									passing a colour hex code as a parameter when bullet objects are instantiated and the difference in behaviour determined by 
+									which class method is called on the bullet objects. Since the only real difference between the types of bullets is what direction 
+									they are fired in, it would have caused a lot of redundant code to split them into separate classes.
+								</p>
 							</section>
 
 					</div>
